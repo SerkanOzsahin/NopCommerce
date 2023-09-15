@@ -8,16 +8,13 @@ import org.testng.annotations.Test;
 public class nurhayat extends BaseDriver {
     @Test
     public void giftsCard(){
+        nurhayat_POM e=new nurhayat_POM();
         driver.get("https://demo.nopcommerce.com/");
 
-        WebElement register= driver.findElement(By.cssSelector("[class='ico-register'] "));
-        register.click();
-        WebElement famale= driver.findElement(By.cssSelector("[class='female']"));
-        famale.click();
-        WebElement firstName= driver.findElement(By.cssSelector("[id='FirstName'] "));
-        firstName.sendKeys("Nur");
-        WebElement lastName= driver.findElement(By.id("LastName"));
-        lastName.sendKeys("Test");
+        e.register.click();
+        e.famale.click();
+        e.firstName.sendKeys("Team One");
+        e.lastName.sendKeys("Techno");
 
         WebElement webDay=driver.findElement(By.name("DateOfBirthDay"));
         WebElement webMonth=driver.findElement(By.name("DateOfBirthMonth"));
@@ -27,33 +24,19 @@ public class nurhayat extends BaseDriver {
         Select month=new Select(webMonth);
         Select year=new Select(webYear);
 
-        day.selectByVisibleText("21");
-        month.selectByValue("4");
-        year.selectByVisibleText("2000");
+        day.selectByVisibleText("5");
+        month.selectByValue("5");
+        year.selectByVisibleText("2005");
+        e.Email.sendKeys("t.one.techno3@gmail.com");
 
-        WebElement Email= driver.findElement(By.id("Email"));
-        Email.sendKeys("yaban@gmail.com");
+     //   WebElement companyName= driver.findElement(By.id("Company"));
+      //  Email.sendKeys("nurltd.şti");
 
-        WebElement companyName= driver.findElement(By.id("Company"));
-        Email.sendKeys("nurltd.şti");
-
-        WebElement newsletter= driver.findElement(By.id("Newsletter"));
-        newsletter.click();
-
-        WebElement password= driver.findElement(By.id("Password"));
-        password.sendKeys("123456");
-        WebElement confirmPassword= driver.findElement(By.id("ConfirmPassword"));
-        confirmPassword.sendKeys("123456");
-        WebElement registr= driver.findElement(By.cssSelector("[id='register-button']"));
-        registr.click();
+        e.newsletter.click();
+        e.password.sendKeys("TOtechno1 ");
+        e.confirmPassword.sendKeys("TOtechno1 ");
+        e.registr.click();
         MyFunc.Wait(3);
-
-
-
-
-
-
-
-
+        e.conbtn.click();
     }
 }
