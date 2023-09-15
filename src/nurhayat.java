@@ -29,9 +29,6 @@ public class nurhayat extends BaseDriver {
         year.selectByVisibleText("2005");
         e.Email.sendKeys("t.one.techno3@gmail.com");
 
-     //   WebElement companyName= driver.findElement(By.id("Company"));
-      //  Email.sendKeys("nurltd.şti");
-
         e.newsletter.click();
         e.password.sendKeys("TOtechno1 ");
         e.confirmPassword.sendKeys("TOtechno1 ");
