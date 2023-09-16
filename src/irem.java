@@ -1,8 +1,13 @@
 import Utility.BaseDriver;
+import Utility.MyFunc;
 import com.sun.org.apache.bcel.internal.ExceptionConst;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class irem extends BaseDriver {
     String mail1 = "iremt8202@gmail.com";
@@ -18,6 +23,15 @@ public class irem extends BaseDriver {
         driver.get("https://demo.nopcommerce.com/");
         wait.until(ExpectedConditions.elementToBeClickable(e.Login));
         e.Login.click();
+        wait.until(ExpectedConditions.elementToBeClickable(e.Mail));
+        e.Mail.sendKeys(mail1);
+        e.Password.sendKeys(password1);
+        wait.until(ExpectedConditions.elementToBeClickable(e.LOGIN));
+        e.LOGIN.click();
+
+
+
+
 
 
 
