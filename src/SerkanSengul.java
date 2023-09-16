@@ -121,9 +121,10 @@ public class SerkanSengul extends BaseDriver {
         e.ShoppingCart.click();
         String Confrim = e.ConfrimProduct.getText();
         Assert.assertTrue(e.ConfrimProduct.getText().equals(Confrim));
-
+        System.out.println("Confrim = " + Confrim);
 
     }
+
     @Test
     public void Gift_Ordering_ProductNegavite() {
 
@@ -138,12 +139,12 @@ public class SerkanSengul extends BaseDriver {
         int RandomGift = MyFunc.randomGenerator(e.AddCart.size());
         e.AddCart.get(RandomGift).click();
 
+        e.Cart.click();
 
-        e.Cart2.click();
 
         String ErrorMessage = e.WrongMessage.getText();
         Assert.assertTrue(e.WrongMessage.getText().equals(ErrorMessage));
-
+        System.out.println("ErrorMessage = " + ErrorMessage);
     }
 
 }
