@@ -99,7 +99,32 @@ public class SerkanSengul extends BaseDriver {
         String ErrorMessage = e.WrongMessage.getText();
         Assert.assertTrue(e.WrongMessage.getText().equals(ErrorMessage));
 
+    }
+
+    @Test
+    public void Gift_Ordering_Product() {
+        SerkanSPOM e = new SerkanSPOM();
+        driver.get("https://demo.nopcommerce.com/");
+        e.LoginButton.click();
+        e.EmailName.sendKeys("TestHamza@gmail.com");
+        e.Password.sendKeys("kobe21tmac");
+        e.LoginClick.click();
+        e.GiftCardButton.click();
+
+        int RandomGift = MyFunc.randomGenerator(e.AddCart.size());
+        e.AddCart.get(RandomGift).click();
+
+        e.RecipientName.sendKeys("Kerem");
+        e.YourName.sendKeys("Serkan");
+        e.Cart.click();
+
+        e.ShoppingCart.click();
+        String Confrim = e.ConfrimProduct.getText();
+        Assert.assertTrue(e.ConfrimProduct.getText().equals(Confrim));
+
 
     }
+
+
 }
 
