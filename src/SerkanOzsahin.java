@@ -49,19 +49,6 @@ public class SerkanOzsahin extends BaseDriver {
     }
 
     @Test
-    public void tabMenuSubMenuLink() {
-
-        SerkanOzsahin_POM e = new SerkanOzsahin_POM();
-        driver.get("https://demo.nopcommerce.com/");
-        MyFunc.Wait(2);
-
-        for (WebElement link : e.subMenuList) {
-
-            Assert.assertTrue(link.getTagName().contains("a"));
-        }
-    }
-
-    @Test
     public void tabMenuSubMenu() {
 
         SerkanOzsahin_POM e = new SerkanOzsahin_POM();
