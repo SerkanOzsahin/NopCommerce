@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -43,13 +44,13 @@ public class SerkanOzsahin extends BaseDriver {
 
             WebElement tabMenuClick = driver.findElement(By.linkText(tabMenuList.get(i)));
             tabMenuClick.click();
+            wait.until(ExpectedConditions.visibilityOf(e.textCheck));
             Assert.assertEquals(tabMenuList.get(i), e.textCheck.getText());
-            driver.navigate().back();
         }
     }
 
     @Test(groups = {"UI Test"})
-    public void tabMenuSubMenu() {
+    public void tabMenuSubMenuVerification() {
 
         SerkanOzsahin_POM e = new SerkanOzsahin_POM();
         driver.get("https://demo.nopcommerce.com/");
@@ -72,6 +73,7 @@ public class SerkanOzsahin extends BaseDriver {
             action.perform();
             WebElement subMenuClick = driver.findElement(By.linkText(subMenuListText.get(i)));
             subMenuClick.click();
+            wait.until(ExpectedConditions.visibilityOf(e.subMenuTextCheck));
             Assert.assertEquals(subMenuListText.get(i), e.subMenuTextCheck.getText());
 
             if (i == 2 || i == 5) {
