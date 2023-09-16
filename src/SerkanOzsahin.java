@@ -13,7 +13,7 @@ import java.util.List;
 
 public class SerkanOzsahin extends BaseDriver {
 
-    @Test
+    @Test(groups = {"UI Test"})
     public void tabMenuControl() {
 
         SerkanOzsahin_POM e = new SerkanOzsahin_POM();
@@ -29,7 +29,7 @@ public class SerkanOzsahin extends BaseDriver {
         }
     }
 
-    @Test
+    @Test(groups = {"UI Test"})
     public void tabMenuControlVerification() {
 
         SerkanOzsahin_POM e = new SerkanOzsahin_POM();
@@ -48,7 +48,7 @@ public class SerkanOzsahin extends BaseDriver {
         }
     }
 
-    @Test
+    @Test(groups = {"UI Test"})
     public void tabMenuSubMenu() {
 
         SerkanOzsahin_POM e = new SerkanOzsahin_POM();
