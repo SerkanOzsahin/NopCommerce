@@ -64,6 +64,9 @@ public class SerkanSPOM {
     @FindBy(className = "product-name")
     public WebElement ConfrimProduct;
 
+    @FindBy(css = "[class='bar-notification error']")
+    public WebElement WrongMessage;
+
 
 
 
