@@ -124,7 +124,27 @@ public class SerkanSengul extends BaseDriver {
 
 
     }
+    @Test
+    public void Gift_Ordering_ProductNegavite() {
 
+        SerkanSPOM e = new SerkanSPOM();
+        driver.get("https://demo.nopcommerce.com/");
+        e.LoginButton.click();
+        e.EmailName.sendKeys("serkan135421@gmail.com");
+        e.Password.sendKeys("kobe21tmac");
+        e.LoginClick.click();
+        e.GiftCardButton.click();
+
+        int RandomGift = MyFunc.randomGenerator(e.AddCart.size());
+        e.AddCart.get(RandomGift).click();
+
+
+        e.Cart2.click();
+
+        String ErrorMessage = e.WrongMessage.getText();
+        Assert.assertTrue(e.WrongMessage.getText().equals(ErrorMessage));
+
+    }
 
 }
 

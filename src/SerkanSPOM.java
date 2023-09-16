@@ -82,7 +82,6 @@ public class SerkanSPOM {
     @FindBy(id = "add-to-cart-button-45")
     public WebElement Cart;
 
-
-
-
+    @FindBy(id = "add-to-cart-button-43")
+    public WebElement Cart2;
 }
