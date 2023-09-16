@@ -15,9 +15,6 @@ public class SerkanOzsahin_POM {
     @FindBy(css = "div[class='page-title'] > h1")
     public WebElement textCheck;
 
-    @FindBy(css = "ul[class='top-menu notmobile'] ul[class='sublist first-level'] a")
-    public List<WebElement> subMenuList;
-
     @FindBy(css = "div[class='page-title'] > h1")
     public WebElement subMenuTextCheck;
 }
