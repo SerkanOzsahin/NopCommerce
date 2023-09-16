@@ -67,8 +67,20 @@ public class SerkanSPOM {
     @FindBy(css = "[class='bar-notification error']")
     public WebElement WrongMessage;
 
+    @FindBy(xpath = "(//*[@href='/gift-cards'])[1]")
+    public WebElement GiftCardButton;
 
+    @FindBy(css = "[class='button-2 product-box-add-to-cart-button']")
+    public List<WebElement> AddCart;
 
+    @FindBy(id = "giftcard_45_RecipientName")
+    public WebElement RecipientName;
+
+    @FindBy(id = "giftcard_45_SenderName")
+    public WebElement YourName;
+
+    @FindBy(id = "add-to-cart-button-45")
+    public WebElement Cart;
 
 
 }
