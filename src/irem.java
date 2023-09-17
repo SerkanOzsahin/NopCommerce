@@ -80,7 +80,19 @@ public class irem extends BaseDriver {
         wait.until(ExpectedConditions.elementToBeClickable(e.LOGIN));
         e.LOGIN.click();
     }
+    @Test
+    public void PositiveLogin(){
+        iremPOM e = new iremPOM();
+        driver.get("https://demo.nopcommerce.com/");
+        wait.until(ExpectedConditions.elementToBeClickable(e.Login));
+        e.Login.click();
+        wait.until(ExpectedConditions.elementToBeClickable(e.Mail));
+        e.Mail.sendKeys(mail1);
+        e.Password.sendKeys(password2);
+        wait.until(ExpectedConditions.elementToBeClickable(e.LOGIN));
+        e.LOGIN.click();
 
+    }
 
 
     }
