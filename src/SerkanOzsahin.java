@@ -1,11 +1,13 @@
 import Utility.BaseDriver;
 import Utility.MyFunc;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -31,7 +33,7 @@ public class SerkanOzsahin extends BaseDriver {
     }
 
     @Test(groups = {"UI Test"})
-    public void tabMenuControlVerification() {
+    public void tabMenuVerification() {
 
         SerkanOzsahin_POM e = new SerkanOzsahin_POM();
         driver.get("https://demo.nopcommerce.com/");
@@ -80,5 +82,18 @@ public class SerkanOzsahin extends BaseDriver {
                 index++;
             }
         }
+    }
+
+    @Test(groups = {"UI Test"})
+    @Parameters("searchText")
+    public void searchWithParameter(String search) {
+
+        SerkanOzsahin_POM e = new SerkanOzsahin_POM();
+        driver.get("https://demo.nopcommerce.com/");
+        MyFunc.Wait(2);
+
+        e.searchBox.sendKeys(search + Keys.ENTER);
+        wait.until(ExpectedConditions.visibilityOf(e.searchTextConfirm));
+        Assert.assertEquals(search, e.productName.getText());
     }
 }
