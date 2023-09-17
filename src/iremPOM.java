@@ -18,8 +18,6 @@ public class iremPOM {
     @FindBy(css = "button[class='button-1 login-button']")
     public WebElement LOGIN;
 
-    @FindBy(css ="div[class='message-error validation-summary-errors']" )
-    public WebElement error;
 
 
 
