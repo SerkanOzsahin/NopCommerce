@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -38,16 +39,16 @@ public class irem extends BaseDriver {
         return invalidData;
     }
 
-
+    @Parameters({"username","password"})
     @Test(groups ="Smoke Test")
-    public void PositiveLogin(){
+    public void PositiveLogin(String username,String password){
         iremPOM e = new iremPOM();
         driver.get("https://demo.nopcommerce.com/");
         wait.until(ExpectedConditions.elementToBeClickable(e.Login));
         e.Login.click();
         wait.until(ExpectedConditions.elementToBeClickable(e.Mail));
-        e.Mail.sendKeys(validUsername);
-        e.Password.sendKeys(validPassword);
+        e.Mail.sendKeys(username);
+        e.Password.sendKeys(password);
         wait.until(ExpectedConditions.elementToBeClickable(e.LOGIN));
         e.LOGIN.click();
     }
