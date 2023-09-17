@@ -17,4 +17,13 @@ public class SerkanOzsahin_POM {
 
     @FindBy(css = "div[class='page-title'] > h1")
     public WebElement subMenuTextCheck;
+
+    @FindBy(id = "small-searchterms")
+    public WebElement searchBox;
+
+    @FindBy(css = "div[class='page-title'] > h1")
+    public WebElement searchTextConfirm;
+
+    @FindBy(css = "h2[class='product-title'] > a")
+    public WebElement productName;
 }
