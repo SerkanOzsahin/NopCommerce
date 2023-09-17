@@ -2,6 +2,8 @@ import Utility.BaseDriver;
 import Utility.MyFunc;
 import com.sun.org.apache.bcel.internal.ExceptionConst;
 import com.sun.xml.internal.ws.api.message.Message;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
@@ -29,6 +31,8 @@ public class irem extends BaseDriver {
         e.Password.sendKeys(password1);
         wait.until(ExpectedConditions.elementToBeClickable(e.LOGIN));
         e.LOGIN.click();
+        WebElement unsuccessful=driver.findElement(By.cssSelector("div[class='message-error validation-summary-errors']"));
+        Assert.assertTrue(unsuccessful.getText().contains("Login was unsuccessful"));
 
     }
     @Test
@@ -42,6 +46,8 @@ public class irem extends BaseDriver {
         e.Password.sendKeys(password2);
         wait.until(ExpectedConditions.elementToBeClickable(e.LOGIN));
         e.LOGIN.click();
+        WebElement unsuccessful=driver.findElement(By.cssSelector("div[class='message-error validation-summary-errors']"));
+        Assert.assertTrue(unsuccessful.getText().contains("Login was unsuccessful"));
 
     }
     @Test
@@ -55,6 +61,8 @@ public class irem extends BaseDriver {
         e.Password.sendKeys(password3);
         wait.until(ExpectedConditions.elementToBeClickable(e.LOGIN));
         e.LOGIN.click();
+        WebElement unsuccessful=driver.findElement(By.cssSelector("div[class='message-error validation-summary-errors']"));
+        Assert.assertTrue(unsuccessful.getText().contains("Login was unsuccessful"));
     }
     @Test
     public void NegativeLogin4(){
@@ -67,6 +75,8 @@ public class irem extends BaseDriver {
         e.Password.sendKeys(password1);
         wait.until(ExpectedConditions.elementToBeClickable(e.LOGIN));
         e.LOGIN.click();
+        WebElement unsuccessful=driver.findElement(By.cssSelector("div[class='message-error validation-summary-errors']"));
+        Assert.assertTrue(unsuccessful.getText().contains("Login was unsuccessful"));
     }
     @Test
     public void NegativeLogin5(){
@@ -79,8 +89,24 @@ public class irem extends BaseDriver {
         e.Password.sendKeys(password3);
         wait.until(ExpectedConditions.elementToBeClickable(e.LOGIN));
         e.LOGIN.click();
+        WebElement unsuccessful=driver.findElement(By.cssSelector("div[class='message-error validation-summary-errors']"));
+        Assert.assertTrue(unsuccessful.getText().contains("Login was unsuccessful"));
     }
+    @Test
+    public void PositiveLogin(){
+        iremPOM e = new iremPOM();
+        driver.get("https://demo.nopcommerce.com/");
+        wait.until(ExpectedConditions.elementToBeClickable(e.Login));
+        e.Login.click();
+        wait.until(ExpectedConditions.elementToBeClickable(e.Mail));
+        e.Mail.sendKeys(mail1);
+        e.Password.sendKeys(password2);
+        wait.until(ExpectedConditions.elementToBeClickable(e.LOGIN));
+        e.LOGIN.click();
 
+
+
+    }
 
 
     }
