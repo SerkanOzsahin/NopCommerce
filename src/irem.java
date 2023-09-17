@@ -66,8 +66,8 @@ public class irem extends BaseDriver {
    }
     @DataProvider
     public Object[][]nullData(){
-        Object[][]userNullData={{validUsername,""},{"",validPassword},{"",""}};
-        return userNullData;
+        Object[][]userNullData= {{validUsername,""}, {"",validPassword}, {"",""}};
+        return  userNullData;
     }
 
     }
