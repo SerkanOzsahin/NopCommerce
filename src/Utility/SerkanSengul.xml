@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="mySuit">
+
+    <test name="myTest1">
+        <parameter name="SearchText" value="Custom T-Shirt"></parameter>
+
+        <classes>
+            <class name="SerkanSengul"></class>
+        </classes>
+    </test>
+
+</suite>

@@ -46,13 +46,12 @@ public class SerkanSPOM {
     public List<WebElement> HDD;
 
 
-    @FindBy(css ="[id='product_attribute_input_4'] li input")
-    public List<WebElement>OS;
+    @FindBy(css = "[id='product_attribute_input_4'] li input")
+    public List<WebElement> OS;
 
 
-    @FindBy(css ="[id='product_attribute_input_5'] li input")
-    public List<WebElement>SoftWare;
-
+    @FindBy(css = "[id='product_attribute_input_5'] li input")
+    public List<WebElement> SoftWare;
 
 
     @FindBy(id = "add-to-cart-button-1")
@@ -73,14 +72,59 @@ public class SerkanSPOM {
     @FindBy(css = "[class='button-2 product-box-add-to-cart-button']")
     public List<WebElement> AddCart;
 
-    @FindBy(id = "giftcard_45_RecipientName")
+    @FindBy(className = "recipient-name")
     public WebElement RecipientName;
 
-    @FindBy(id = "giftcard_45_SenderName")
-    public WebElement YourName;
+    @FindBy(className = "recipient-email")
+    public WebElement RecipientEmail;
+//    @FindBy(id = "giftcard_45_SenderName")
+//    public WebElement YourName;
 
-    @FindBy(id = "add-to-cart-button-45")
+    @FindBy(xpath = "(//*[@type='button'])[2]")
     public WebElement Cart;
 
 
+
+
+
+    @FindBy(css = "ul[class='top-menu notmobile'] > li")
+    public List<WebElement> TopMenu;
+
+    @FindBy(css = "[class='top-menu notmobile'] a")
+    public List<WebElement> ProductMenu;
+
+    @FindBy(css = "ul[class='top-menu notmobile'] >li li")
+    public List<WebElement> items;
+
+    @FindBy(className = "product-title")
+    public List<WebElement> ProductList;
+
+    @FindBy(xpath = "(//*[@href='/computers'])[3]")
+    public WebElement ComputersButton;
+
+
+    @FindBy(xpath = "(//*[@href='/electronics'])[3]")
+    public WebElement ElectronicsButton;
+
+    @FindBy(css = "[class='sub-category-item']")
+    public List<WebElement> Products;
+
+    @FindBy(xpath = "(//*[@href='/apparel'])[3]")
+    public WebElement ApparelButton;
+
+    @FindBy(xpath = "(//*[@href='/digital-downloads'])[3]")
+    public WebElement DigitalDowlandsButton;
+
+    @FindBy(xpath = "(//*[@href='/books'])[3]")
+    public WebElement BooksButton;
+
+    @FindBy(xpath = "(//*[@href='/jewelry'])[3]")
+    public WebElement JewelryButton;
+
+    @FindBy(xpath = "(//*[@href='/gift-cards'])[3]")
+    public WebElement GiftCardsButton;
+
+    @FindBy(css = "[placeholder='Search store']")
+    public WebElement Searchbox;
 }
+
