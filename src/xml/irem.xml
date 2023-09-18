@@ -2,8 +2,11 @@
 
 <suite name="mySuit">
     <test name="myTest1">
+
         <parameter name="username" value="iremt8202@gmail.com"></parameter>
-        <parameter name="password" value="gtfeggh123AB"></parameter>
+        <parameter name="password" value="123abc"></parameter>
+
+
 
         <classes>
             <class name="irem"> </class>
