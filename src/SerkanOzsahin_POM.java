@@ -26,4 +26,7 @@ public class SerkanOzsahin_POM {
 
     @FindBy(css = "h2[class='product-title'] > a")
     public WebElement productName;
+
+    @FindBy(css = "h2[class='product-title'] a")
+    public List<WebElement> allProductsText;
 }

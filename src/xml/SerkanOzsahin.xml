@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="mySuite">
+
+    <test name="myTest1">
+        <parameter name="searchText" value="Adobe Photoshop CS4"></parameter>
+        <parameter name="challangeText" value="HP Spectre XT Pro UltraBook"></parameter>
+
+        <classes>
+            <class name="SerkanOzsahin"></class>
+        </classes>
+
+    </test>
+
+    <test name="myTest2">
+        <parameter name="searchText" value="Apple iCam"></parameter>
+        <parameter name="challangeText" value="Nike Floral Roshe Customized Running Shoes"></parameter>
+
+        <classes>
+            <class name="SerkanOzsahin"></class>
+        </classes>
+
+    </test>
+
+</suite>
