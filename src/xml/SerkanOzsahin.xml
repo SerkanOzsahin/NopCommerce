@@ -4,17 +4,7 @@
 
     <test name="myTest1">
         <parameter name="searchText" value="Adobe Photoshop CS4"></parameter>
-        <parameter name="challangeText" value="HP Spectre XT Pro UltraBook"></parameter>
-
-        <classes>
-            <class name="SerkanOzsahin"></class>
-        </classes>
-
-    </test>
-
-    <test name="myTest2">
-        <parameter name="searchText" value="Apple iCam"></parameter>
-        <parameter name="challangeText" value="Nike Floral Roshe Customized Running Shoes"></parameter>
+        <parameter name="challengeText" value="HP Spectre XT Pro UltraBook"></parameter>
 
         <classes>
             <class name="SerkanOzsahin"></class>
