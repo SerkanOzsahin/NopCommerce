@@ -3,24 +3,27 @@ import Utility.MyFunc;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.Random;
+import java.security.Key;
+import java.util.*;
 
 public class SerkanSengul extends BaseDriver {
 
 
-    @Test
-    public void Ordering_The_Computer() {
+     @Test(priority = 2)
+       public void Ordering_The_Computer() {
+
         SerkanSPOM e = new SerkanSPOM();
 
         driver.get("https://demo.nopcommerce.com/");
         e.LoginButton.click();
-        e.EmailName.sendKeys("TestHamza@gmail.com");
+        e.EmailName.sendKeys("hamzamemduh@gmail.com");
         e.Password.sendKeys("kobe21tmac");
         e.LoginClick.click();
         e.Computers.click();
@@ -62,14 +65,14 @@ public class SerkanSengul extends BaseDriver {
 
     }
 
-    @Test
+    @Test(priority = 3)
     public void Ordering_The_ComputeNegative() {
         SerkanSPOM e = new SerkanSPOM();
-        driver.get("https://demo.nopcommerce.com/");
-        e.LoginButton.click();
-        e.EmailName.sendKeys("TestHamza@gmail.com");
-        e.Password.sendKeys("kobe21tmac");
-        e.LoginClick.click();
+//        driver.get("https://demo.nopcommerce.com/");
+//        e.LoginButton.click();
+//        e.EmailName.sendKeys("hamzamemduh@gmail.com");
+//        e.Password.sendKeys("kobe21tmac");
+//        e.LoginClick.click();
         e.Computers.click();
         wait.until(ExpectedConditions.elementToBeClickable(e.DesktopsLeft));
         e.DesktopsLeft.click();
@@ -101,21 +104,22 @@ public class SerkanSengul extends BaseDriver {
 
     }
 
-    @Test
+    @Test(priority = 4)
     public void Gift_Ordering_Product() {
         SerkanSPOM e = new SerkanSPOM();
-        driver.get("https://demo.nopcommerce.com/");
-        e.LoginButton.click();
-        e.EmailName.sendKeys("TestHamza@gmail.com");
-        e.Password.sendKeys("kobe21tmac");
-        e.LoginClick.click();
+//        driver.get("https://demo.nopcommerce.com/");
+//        e.LoginButton.click();
+//        e.EmailName.sendKeys("hamzamemduh@gmail.com");
+//        e.Password.sendKeys("kobe21tmac");
+//        e.LoginClick.click();
+       driver.navigate().back();
         e.GiftCardButton.click();
 
         int RandomGift = MyFunc.randomGenerator(e.AddCart.size());
         e.AddCart.get(RandomGift).click();
 
         e.RecipientName.sendKeys("Kerem");
-        e.YourName.sendKeys("Serkan");
+//        e.RecipientEmail.sendKeys("keremler212@gmail.com");
         e.Cart.click();
 
         e.ShoppingCart.click();
@@ -125,20 +129,22 @@ public class SerkanSengul extends BaseDriver {
 
     }
 
-    @Test
+    @Test(priority = 5)
     public void Gift_Ordering_ProductNegavite() {
 
         SerkanSPOM e = new SerkanSPOM();
-        driver.get("https://demo.nopcommerce.com/");
-        e.LoginButton.click();
-        e.EmailName.sendKeys("serkan135421@gmail.com");
-        e.Password.sendKeys("kobe21tmac");
-        e.LoginClick.click();
+//        driver.get("https://demo.nopcommerce.com/");
+//        e.LoginButton.click();
+//        e.EmailName.sendKeys("hamzamemduh@gmail.com");
+//        e.Password.sendKeys("kobe21tmac");
+//        e.LoginClick.click();
         e.GiftCardButton.click();
+
 
         int RandomGift = MyFunc.randomGenerator(e.AddCart.size());
         e.AddCart.get(RandomGift).click();
 
+        MyFunc.Wait(2);
         e.Cart.click();
 
 
@@ -147,5 +153,100 @@ public class SerkanSengul extends BaseDriver {
         System.out.println("ErrorMessage = " + ErrorMessage);
     }
 
+    @Test(parameters = "SearchText",priority = 1)
+
+    public void ChallangeQuestion(String SearchingText) {
+        SerkanSPOM e = new SerkanSPOM();
+        List<String> TotalProduct = new ArrayList<>();
+        List<WebElement> ProductElements = e.ProductList;
+        driver.get("https://demo.nopcommerce.com/");
+        e.Computers.click();
+        wait.until(ExpectedConditions.elementToBeClickable(e.DesktopsLeft));
+        e.DesktopsLeft.click();
+        e.ComputersButton.click();
+        for (int i = 0; i < e.Products.size(); i++) {
+            e.Products.get(i).click();
+            MyFunc.Wait(1);
+            for (WebElement productElement : ProductElements) {
+                TotalProduct.add(productElement.getText());
+            }
+            driver.navigate().back();
+        }
+        e.ElectronicsButton.click();
+        for (int i = 0; i < e.Products.size(); i++) {
+            e.Products.get(i).click();
+            MyFunc.Wait(2);
+            for (WebElement productElement : ProductElements) {
+                TotalProduct.add(productElement.getText());
+            }
+            driver.navigate().back();
+        }
+        e.ApparelButton.click();
+        for (int i = 0; i < e.Products.size(); i++) {
+            e.Products.get(i).click();
+            MyFunc.Wait(1);
+            for (WebElement productElement : ProductElements) {
+                TotalProduct.add(productElement.getText());
+            }
+            driver.navigate().back();
+        }
+        e.DigitalDowlandsButton.click();
+        for (int i = 0; i < e.ProductList.size(); i++) {
+            TotalProduct.add(e.ProductList.get(i).getText());
+        }
+        e.BooksButton.click();
+        for (int i = 0; i < e.ProductList.size(); i++) {
+            TotalProduct.add(e.ProductList.get(i).getText());
+        }
+        e.JewelryButton.click();
+        for (int i = 0; i < e.ProductList.size(); i++) {
+            TotalProduct.add(e.ProductList.get(i).getText());
+        }
+        e.GiftCardsButton.click();
+        for (int i = 0; i < e.ProductList.size(); i++) {
+            TotalProduct.add(e.ProductList.get(i).getText());
+        }
+        MyFunc.Wait(2);
+        e.Searchbox.sendKeys(SearchingText + Keys.ENTER);
+        MyFunc.Wait(2);
+        for (String product : TotalProduct) {
+            System.out.println("product = " + product);
+            if (product.equalsIgnoreCase(SearchingText)) {
+                System.out.println("Ürün bulundu"+SearchingText);
+                break;
+
+            }
+
+
+        }
+
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
