@@ -84,8 +84,8 @@ public class SerkanOzsahin extends BaseDriver {
         }
     }
 
-    @Test(groups = {"UI Test"})
     @Parameters("searchText")
+    @Test(groups = {"UI Test"})
     public void searchWithParameter(String search) {
 
         SerkanOzsahin_POM e = new SerkanOzsahin_POM();
@@ -97,8 +97,8 @@ public class SerkanOzsahin extends BaseDriver {
         Assert.assertEquals(search, e.productName.getText());
     }
 
-    @Test
     @Parameters("challengeText")
+    @Test(priority = 1)
     public void tabMenuChallenge(String search) {
 
         SerkanOzsahin_POM e = new SerkanOzsahin_POM();
