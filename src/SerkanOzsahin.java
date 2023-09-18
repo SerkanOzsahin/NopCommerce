@@ -96,4 +96,50 @@ public class SerkanOzsahin extends BaseDriver {
         wait.until(ExpectedConditions.visibilityOf(e.searchTextConfirm));
         Assert.assertEquals(search, e.productName.getText());
     }
+
+    @Test
+    @Parameters("challengeText")
+    public void tabMenuChallenge(String search) {
+
+        SerkanOzsahin_POM e = new SerkanOzsahin_POM();
+        driver.get("https://demo.nopcommerce.com/");
+        MyFunc.Wait(2);
+
+        Actions actions = new Actions(driver);
+
+        List<String> tabMenuList = new ArrayList<>();
+        Collections.addAll(tabMenuList, "Computers", "Electronics", "Apparel");
+
+        List<String> subMenuListText = new ArrayList<>();
+        Collections.addAll(subMenuListText, "Desktops", "Notebooks", "Software", "Camera & photo", "Cell phones", "Others", "Shoes", "Clothing", "Accessories");
+
+        List<String> allProducts = new ArrayList<>();
+
+        int index = 0;
+
+        for (int i = 0; i < subMenuListText.size(); i++) {
+
+            WebElement tabMenuClick = driver.findElement(By.linkText(tabMenuList.get(index)));
+            Action action = actions.moveToElement(tabMenuClick).build();
+            action.perform();
+            WebElement subMenuClick = driver.findElement(By.linkText(subMenuListText.get(i)));
+            subMenuClick.click();
+            wait.until(ExpectedConditions.visibilityOf(e.subMenuTextCheck));
+
+            for (WebElement products : e.allProductsText) {
+                String productText = products.getText();
+                allProducts.add(productText);
+            }
+
+            if (i == 2 || i == 5) {
+                index++;
+            }
+        }
+
+        driver.navigate().to("https://demo.nopcommerce.com/");
+        wait.until(ExpectedConditions.visibilityOf(e.searchBox));
+        e.searchBox.sendKeys(search + Keys.ENTER);
+        wait.until(ExpectedConditions.visibilityOf(e.productName));
+        Assert.assertTrue(allProducts.contains(e.productName.getText()));
+    }
 }
