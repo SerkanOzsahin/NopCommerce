@@ -1,4 +1,5 @@
 import Utility.BaseDriver;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,7 +15,7 @@ public class irem extends BaseDriver {
     String invalidPassword = "fhfrnf45689";
     String invalidUsername = "iremmmfhh@gmail.com";
 
-    String validPassword = "gtfeggh123AB";
+    String validPassword = "123abc";
 
 
     @Test(dataProvider = "userData",groups ="Smoke Test")
@@ -39,16 +40,16 @@ public class irem extends BaseDriver {
         return invalidData;
     }
 
-    @Parameters({"username","password"})
+
     @Test(groups ="Smoke Test")
-    public void PositiveLogin(String username,String password){
+    public void PositiveLogin(){
         iremPOM e = new iremPOM();
         driver.get("https://demo.nopcommerce.com/");
         wait.until(ExpectedConditions.elementToBeClickable(e.Login));
         e.Login.click();
         wait.until(ExpectedConditions.elementToBeClickable(e.Mail));
-        e.Mail.sendKeys(username);
-        e.Password.sendKeys(password);
+        e.Mail.sendKeys(validUsername);
+        e.Password.sendKeys(validPassword);
         wait.until(ExpectedConditions.elementToBeClickable(e.LOGIN));
         e.LOGIN.click();
     }
@@ -69,6 +70,27 @@ public class irem extends BaseDriver {
         Object[][]userNullData= {{validUsername,""}, {"",validPassword}, {"",""}};
         return  userNullData;
     }
+    @Parameters({"username","password"})
+    @Test(groups = "Smoke Test")
+    public void Login(String ID ,String PASS){
+        iremPOM e = new iremPOM();
+        driver.get("https://demo.nopcommerce.com/");
+        wait.until(ExpectedConditions.elementToBeClickable(e.Login));
+        e.Login.click();
+        wait.until(ExpectedConditions.elementToBeClickable(e.Mail));
+        e.Mail.sendKeys(ID);
+        e.Password.sendKeys(PASS);
+        wait.until(ExpectedConditions.elementToBeClickable(e.LOGIN));
+        e.LOGIN.click();
+        e.MyAccount.click();
+        wait.until(ExpectedConditions.visibilityOf(e.mailCheck));
+        System.out.println(e.mailCheck.getText());
+        Assert.assertTrue(validUsername.equals(e.mailCheck.getAttribute("value")));
+
+
+
+    }
+
 
     }
 

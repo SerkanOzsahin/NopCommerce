@@ -18,6 +18,12 @@ public class iremPOM {
     @FindBy(css = "button[class='button-1 login-button']")
     public WebElement LOGIN;
 
+    @FindBy(linkText = "My account")
+    public WebElement MyAccount;
+
+    @FindBy(css = "input[name='Email']")
+    public WebElement mailCheck;
+
 
 
 
