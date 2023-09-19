@@ -41,7 +41,7 @@ public class nurhayat_POM extends BaseDriver {
     public WebElement confirmPassword;
 
     @FindBy(css = "[id='register-button']")
-    public WebElement registr;
+    public WebElement registerbtn;
 
     @FindBy(css= "[class='button-1 register-continue-button']")
     public WebElement conbtn;
