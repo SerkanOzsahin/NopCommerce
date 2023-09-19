@@ -98,7 +98,7 @@ public class SerkanOzsahin extends BaseDriver {
     }
 
     @Parameters("challengeText")
-    @Test(priority = 1)
+    @Test
     public void tabMenuChallenge(String search) {
 
         SerkanOzsahin_POM e = new SerkanOzsahin_POM();
@@ -107,32 +107,43 @@ public class SerkanOzsahin extends BaseDriver {
 
         Actions actions = new Actions(driver);
 
+        List<String> allProducts = new ArrayList<>();
+
         List<String> tabMenuList = new ArrayList<>();
-        Collections.addAll(tabMenuList, "Computers", "Electronics", "Apparel");
+        Collections.addAll(tabMenuList, "Computers", "Electronics", "Apparel", "Digital downloads", "Books", "Jewelry", "Gift Cards");
 
         List<String> subMenuListText = new ArrayList<>();
         Collections.addAll(subMenuListText, "Desktops", "Notebooks", "Software", "Camera & photo", "Cell phones", "Others", "Shoes", "Clothing", "Accessories");
 
-        List<String> allProducts = new ArrayList<>();
-
         int index = 0;
 
-        for (int i = 0; i < subMenuListText.size(); i++) {
+        for (int i = 0; i < e.allLocators.size(); i++) {
 
-            WebElement tabMenuClick = driver.findElement(By.linkText(tabMenuList.get(index)));
-            Action action = actions.moveToElement(tabMenuClick).build();
-            action.perform();
-            WebElement subMenuClick = driver.findElement(By.linkText(subMenuListText.get(i)));
-            subMenuClick.click();
-            wait.until(ExpectedConditions.visibilityOf(e.subMenuTextCheck));
+            if (index <= 2) {
 
-            for (WebElement products : e.allProductsText) {
-                String productText = products.getText();
+                WebElement tabMenuClick = driver.findElement(By.linkText(tabMenuList.get(index)));
+                Action action = actions.moveToElement(tabMenuClick).build();
+                action.perform();
+                WebElement subMenuClick = driver.findElement(By.linkText(subMenuListText.get(i)));
+                subMenuClick.click();
+
+            } else {
+
+                WebElement tabMenuClick = driver.findElement(By.linkText(tabMenuList.get(index)));
+                tabMenuClick.click();
+            }
+
+            for (WebElement name : e.productNames) {
+                String productText = name.getText();
                 allProducts.add(productText);
             }
 
-            if (i == 2 || i == 5) {
+            if (i == 2 || i == 5 || i >= 8) {
                 index++;
+            }
+
+            if (i == 13) {
+                break;
             }
         }
 
@@ -141,5 +152,6 @@ public class SerkanOzsahin extends BaseDriver {
         e.searchBox.sendKeys(search + Keys.ENTER);
         wait.until(ExpectedConditions.visibilityOf(e.productName));
         Assert.assertTrue(allProducts.contains(e.productName.getText()));
+        System.out.println("all products = " + allProducts);
     }
 }

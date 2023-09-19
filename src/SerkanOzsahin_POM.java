@@ -24,9 +24,12 @@ public class SerkanOzsahin_POM {
     @FindBy(css = "div[class='page-title'] > h1")
     public WebElement searchTextConfirm;
 
-    @FindBy(css = "h2[class='product-title'] > a")
+    @FindBy(css = "h2[class='product-title'] a")
     public WebElement productName;
 
-    @FindBy(css = "h2[class='product-title'] a")
-    public List<WebElement> allProductsText;
+    @FindBy(css = "div[class='details'] a")
+    public List<WebElement> productNames;
+
+    @FindBy(css = "ul[class='top-menu notmobile']")
+    public List<WebElement> allLocators;
 }
