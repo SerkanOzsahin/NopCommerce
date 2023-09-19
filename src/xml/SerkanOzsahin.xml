@@ -3,6 +3,7 @@
 <suite name="mySuite">
 
     <test name="myTest1">
+
         <parameter name="searchText" value="Adobe Photoshop CS4"></parameter>
         <parameter name="challengeText" value="HP Spectre XT Pro UltraBook"></parameter>
 

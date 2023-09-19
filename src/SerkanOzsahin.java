@@ -117,7 +117,7 @@ public class SerkanOzsahin extends BaseDriver {
 
         int index = 0;
 
-        for (int i = 0; i < e.allLocators.size(); i++) {
+        for (int i = 0; i < 13; i++) {
 
             if (index <= 2) {
 
@@ -140,10 +140,6 @@ public class SerkanOzsahin extends BaseDriver {
 
             if (i == 2 || i == 5 || i >= 8) {
                 index++;
-            }
-
-            if (i == 13) {
-                break;
             }
         }
 
