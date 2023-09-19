@@ -29,7 +29,4 @@ public class SerkanOzsahin_POM {
 
     @FindBy(css = "div[class='details'] a")
     public List<WebElement> productNames;
-
-    @FindBy(css = "ul[class='top-menu notmobile']")
-    public List<WebElement> allLocators;
 }
