@@ -8,14 +8,21 @@ public class Ayca extends BaseDriver {
     @Test
     public void Login_test(){
         driver.get("https://demo.nopcommerce.com/");
-        MyFunc.Wait(1);
-        WebElement email=driver.findElement(By.xpath("//input[@id='email'])"));
-        email.sendKeys("email");
-        MyFunc.Wait(1);
-        WebElement Password=driver.findElement(By.xpath("//input[@id='Password'])"));
-        Password.sendKeys("Password");
-        MyFunc.Wait(1);
-        WebElement LoginButton=driver.findElement(By.xpath("//input[@id='login-button'])"));
-        LoginButton.click();
+        WebElement loginButton =driver.findElement(By.linkText("Log in"));
+        loginButton.click();
+
+        WebElement eMail=driver.findElement(By.id("Email"));
+        eMail.sendKeys("hamzihamda@gmail.com");
+
+        WebElement password=driver.findElement(By.id("Password"));
+        password.sendKeys("123456789");
+
+        WebElement submitButton=driver.findElement(By.xpath("(//button[@type='submit'])[1]"));
+        submitButton.click();
+
+        WebElement myAcc=driver.findElement(By.linkText("My account"));
+        myAcc.click();
+        WebElement eMailConfirm=driver.findElement(By.className("valid"));
+        eMailConfirm.getText();
     }
 }
