@@ -24,7 +24,7 @@ public class NopCommerceMain extends BaseDriver {
     String invalidPassword = "123456";
 
     @Test(groups = {"Smoke Test"}, priority = 1)
-    public void creatingAUser() { // Assigned to Nurhayat / UserStory-1
+    public void creatingAUser() { // Assigned to Nurhayat Soydan / UserStory-1
 
         NopCommerce_POM e = new NopCommerce_POM();
         driver.get("https://demo.nopcommerce.com/");
@@ -52,7 +52,7 @@ public class NopCommerceMain extends BaseDriver {
     }
 
     @Test(groups = {"Smoke Test"}, priority = 2)
-    public void userLogin() { // Assigned to Ayça / UserStory-2
+    public void userLogin() { // Assigned to Ayça Doğan / UserStory-2
 
         driver.get("https://demo.nopcommerce.com/");
         MyFunc.Wait(2);
@@ -76,7 +76,7 @@ public class NopCommerceMain extends BaseDriver {
     }
 
     @Test(dataProvider = "userData", groups = "Smoke Test", priority = 3)
-    public void negativeLogin(String USERNAME, String PASSWORD) { // Assigned to İrem / UserStory-3
+    public void negativeLogin(String USERNAME, String PASSWORD) { // Assigned to İrem Torun / UserStory-3
 
         NopCommerce_POM e = new NopCommerce_POM();
         driver.get("https://demo.nopcommerce.com/");
@@ -99,7 +99,7 @@ public class NopCommerceMain extends BaseDriver {
     }
 
     @Test(dataProvider = "nullData", groups = "Smoke Test", priority = 4)
-    public void nullLogin(String username, String password) { // Assigned to İrem / UserStory-3
+    public void nullLogin(String username, String password) { // Assigned to İrem Torun / UserStory-3
 
         NopCommerce_POM e = new NopCommerce_POM();
         driver.get("https://demo.nopcommerce.com/");
