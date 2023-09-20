@@ -148,6 +148,5 @@ public class SerkanOzsahin extends BaseDriver {
         e.searchBox.sendKeys(search + Keys.ENTER);
         wait.until(ExpectedConditions.visibilityOf(e.productName));
         Assert.assertTrue(allProducts.contains(e.productName.getText()));
-        System.out.println("all products = " + allProducts);
     }
 }
