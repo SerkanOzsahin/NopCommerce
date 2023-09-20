@@ -18,7 +18,7 @@ import java.util.List;
 
 public class NopCommerceMain extends BaseDriver {
 
-    String validUsername = "grp3ts@gmail.com";
+    String validUsername = "tsteam3@gmail.com";
     String validPassword = "techno123";
     String invalidUsername = "iremkekw@gmail.com";
     String invalidPassword = "123456";
@@ -178,18 +178,15 @@ public class NopCommerceMain extends BaseDriver {
 
         NopCommerce_POM e = new NopCommerce_POM();
         driver.get("https://demo.nopcommerce.com/");
-        e.LoginButton.click();
-        e.EmailName.sendKeys(validPassword);
-        e.Password.sendKeys(validPassword);
-        e.LoginClick.click();
-        driver.navigate().back();
         e.GiftCardButton.click();
         int RandomGift = MyFunc.randomGenerator(e.AddCart.size());
         e.AddCart.get(RandomGift).click();
+        e.YourName.sendKeys("serkan");
         e.RecipientName.sendKeys("Kerem");
-        e.RecipientEmail.sendKeys("keremler212@gmail.com");
+        MyFunc.Wait(1);
         e.Cart.click();
-        e.ShoppingCart.click();
+        MyFunc.Wait(1);
+        e.ShoppingLink.click();
         String Confrim = e.ConfrimProduct.getText();
         Assert.assertTrue(e.ConfrimProduct.getText().equals(Confrim));
         System.out.println("Confrim = " + Confrim);
