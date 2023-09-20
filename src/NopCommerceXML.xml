@@ -7,14 +7,6 @@
         <parameter name="searchText" value="Adobe Photoshop CS4"></parameter>
         <parameter name="challengeText" value="HP Spectre XT Pro UltraBook"></parameter>
 
-        <groups>
-
-            <run>
-                <exclude name="Challenge Test"></exclude>
-            </run>
-
-        </groups>
-
         <classes>
             <class name="NopCommerceMain"></class>
         </classes>
