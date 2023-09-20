@@ -8,9 +8,8 @@
         <parameter name="challengeText" value="HP Spectre XT Pro UltraBook"></parameter>
 
         <classes>
-            <class name="SerkanOzsahin"></class>
+            <class name="NopCommerceMain"></class>
         </classes>
-
     </test>
 
 </suite>
