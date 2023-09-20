@@ -21,7 +21,11 @@ https://github.com/SerkanOzsahin/NopCommerce.git
 ## Collaborators : 
 
 Serkan Özşahin(Project Lead)
+
 İrem Torun(Developer)
+
 Ayça Doğan(Developer)
+
 Serkan Şengül(QA)
+
 Nurhayat Soydan(QA)
