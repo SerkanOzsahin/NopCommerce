@@ -25,4 +25,3 @@ https://github.com/SerkanOzsahin/NopCommerce.git
 - Ayça Doğan(Developer)
 - Serkan Şengül(QA)
 - Nurhayat Soydan(QA)
-- 
