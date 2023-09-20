@@ -18,9 +18,9 @@ import java.util.List;
 
 public class NopCommerceMain extends BaseDriver {
 
-    String validUsername = "techffgnofgfgf13@gmail.com";
+    String validUsername = "grp3ts@gmail.com";
     String validPassword = "techno123";
-    String invalidUsername = "iremtorunkekw@gmail.com";
+    String invalidUsername = "iremkekw@gmail.com";
     String invalidPassword = "123456";
 
     @Test(groups = {"Smoke Test"}, priority = 1)
@@ -260,7 +260,7 @@ public class NopCommerceMain extends BaseDriver {
 
     @Parameters("challengeText")
     @Test(priority = 12)
-    public void tabMenuChallenge(String search) { // Challenge UserStory
+    public void tabMenuChallenge(String searchTxt) { // Challenge UserStory
 
         NopCommerce_POM e = new NopCommerce_POM();
         driver.get("https://demo.nopcommerce.com/");
@@ -293,7 +293,7 @@ public class NopCommerceMain extends BaseDriver {
         }
         driver.navigate().to("https://demo.nopcommerce.com/");
         wait.until(ExpectedConditions.visibilityOf(e.searchBox));
-        e.searchBox.sendKeys(search + Keys.ENTER);
+        e.searchBox.sendKeys(searchTxt + Keys.ENTER);
         wait.until(ExpectedConditions.visibilityOf(e.productName));
         Assert.assertTrue(allProducts.contains(e.productName.getText()));
     }
