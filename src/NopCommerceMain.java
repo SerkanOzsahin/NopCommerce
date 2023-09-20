@@ -215,7 +215,7 @@ public class NopCommerceMain extends BaseDriver {
     }
 
     @Test(groups = {"UI Test"}, priority = 10)
-    public void computerOrder() {// Assigned to Serkan Şengül / UserStory-6
+    public void computerOrder() { // Assigned to Serkan Şengül / UserStory-6
 
         NopCommerce_POM e = new NopCommerce_POM();
         driver.get("https://demo.nopcommerce.com/");
@@ -248,7 +248,7 @@ public class NopCommerceMain extends BaseDriver {
 
     @Parameters("searchText")
     @Test(groups = {"UI Test"}, priority = 11)
-    public void searchWithParameter(String search) {// Assigned to Serkan Özşahin / UserStory-7
+    public void searchWithParameter(String search) { // Assigned to Serkan Özşahin / UserStory-7
 
         NopCommerce_POM e = new NopCommerce_POM();
         driver.get("https://demo.nopcommerce.com/");
@@ -259,7 +259,7 @@ public class NopCommerceMain extends BaseDriver {
     }
 
     @Parameters("challengeText")
-    @Test(groups = {"Challenge Test"}, priority = 12)
+    @Test(priority = 12)
     public void tabMenuChallenge(String searchTxt) { // Challenge UserStory
 
         NopCommerce_POM e = new NopCommerce_POM();
