@@ -259,8 +259,8 @@ public class NopCommerceMain extends BaseDriver {
     }
 
     @Parameters("challengeText")
-    @Test(priority = 12)
-    public void tabMenuChallenge(String searchTxt) { // Challenge UserStory
+    @Test(groups = {"Challenge Test"}, priority = 12)
+    public void tabMenuChallenge(String searchTxt) { // Challenge UserStory / Must be run separately
 
         NopCommerce_POM e = new NopCommerce_POM();
         driver.get("https://demo.nopcommerce.com/");
