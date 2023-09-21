@@ -22,7 +22,7 @@ This is an open-source e-commerce project built with Java Core, Selenium and Tes
 
    - [selenium.java](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java)
    - [testng](https://mvnrepository.com/artifact/org.testng/testng)
-   - [slf4j.nop](https://mvnrepository.com/artifact/org.slf4j/slf4j-nop)
+   - [slf4j.nop (optional)](https://mvnrepository.com/artifact/org.slf4j/slf4j-nop)
    
 ## Collaborators : 
 
