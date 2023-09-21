@@ -26,8 +26,8 @@ This is an open-source e-commerce project built with Java Core, Selenium and Tes
    
 ## Collaborators : 
 
-- Serkan Özşahin (Project Lead)
-- İrem Torun (Developer)
-- Ayça Doğan (Developer)
-- Serkan Şengül (QA)
-- Nurhayat Soydan (QA)
+- Serkan Özşahin **(Project Lead)**
+- İrem Torun **(Developer)**
+- Ayça Doğan **(Developer)**
+- Serkan Şengül **(QA)**
+- Nurhayat Soydan **(QA)**
