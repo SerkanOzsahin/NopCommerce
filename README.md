@@ -35,7 +35,7 @@ Our project utilizes the following technologies:
   
 ## Test Organization and Execution
 
-All of our test methods are organized under the class name `NopCommerceMain`. You can run these tests conveniently by using the `NopCommerceXML` file.
+All of our test methods are organized under the class name `NopCommerceMain`. You can run these tests by using the `NopCommerceXML` file.
    
 ## Collaborators : 
 
