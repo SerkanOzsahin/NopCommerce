@@ -6,9 +6,9 @@
 
 Our project utilizes the following technologies:
 
-1. **Java Core:** We use Java as the primary programming language.
-2. **Selenium:** For web automation and testing purposes.
-3. **TestNG:** TestNG is our preferred test management framework.
+- **Java Core:** We use Java as the primary programming language.
+- **Selenium:** For web automation and testing purposes.
+- **TestNG:** TestNG is our preferred test management framework.
 
  We've added features and tools to make online shopping work smoothly for customers and make it easier for people to contribute to the project.  
 
