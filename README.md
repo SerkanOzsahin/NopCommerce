@@ -2,7 +2,15 @@
 
 **URL:** [DemoNopCommerce](https://demo.nopcommerce.com/)
 
-This is an open-source e-commerce project built with Java Core, Selenium and TestNG.
+## Technologies Used
+
+Our project utilizes the following technologies:
+
+1. **Java Core:** We use Java as the primary programming language.
+2. **Selenium:** For web automation and testing purposes.
+3. **TestNG:** TestNG is our preferred test management framework.
+
+ We've added features and tools to make online shopping work smoothly for customers and make it easier for people to contribute to the project.  
 
 ## Features :
 
@@ -14,15 +22,20 @@ This is an open-source e-commerce project built with Java Core, Selenium and Tes
 
 ## Getting Started :
 
-1. **Clone this repository:**
+1. **Clone the Repository:**
+
    ```bash
-   git clone https://github.com/SerkanOzsahin/NopCommerce.git
+   https://github.com/SerkanOzsahin/NopCommerce.git
    
 2. **Install Dependencies:**
 
    - [selenium.java](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java)
    - [testng](https://mvnrepository.com/artifact/org.testng/testng)
    - [slf4j.nop (optional)](https://mvnrepository.com/artifact/org.slf4j/slf4j-nop)
+  
+## Test Organization and Execution
+
+All of our test methods are organized under the class name `NopCommerceMain`. You can run these tests conveniently by using the `NopCommerceXML` file.
    
 ## Collaborators : 
 
