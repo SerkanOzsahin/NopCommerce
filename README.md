@@ -14,13 +14,12 @@ This is an open-source e-commerce project built with Java Core, Selenium and Tes
 
 ## Getting Started :
 
-1. Clone this repository via
-https://github.com/SerkanOzsahin/NopCommerce.git
-2. Install dependencies via https://mvnrepository.com/
+- Clone this repository via https://github.com/SerkanOzsahin/NopCommerce.git
+- Install dependencies via https://mvnrepository.com/
 
-> - selenium.java
-> - testng
-> - slf4j.nop
+- - selenium.java
+- - testng
+- - slf4j.nop
    
 ## Collaborators : 
 
